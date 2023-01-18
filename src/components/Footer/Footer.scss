@@ -1,0 +1,44 @@
+.footer{
+    background: rgb(49,36,169);
+    background: linear-gradient(0deg, rgba(49,36,169,1) 0%, rgba(21,12,89,1) 100%);
+    color: white;
+    &__menu{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        text-align: left;
+        gap: 15px;
+        &__col{
+            
+            h2{
+                margin-left: 5%;
+            }
+            p{
+                margin: 10px;
+                
+            }
+        }
+
+    }
+    &__social{
+        h2{
+            text-align: left;
+            margin-left: 5%;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            gap: 10px;
+            li{
+                img{
+                    width: 40px;
+                }
+            }
+        }
+    }
+    &__copyright{
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+    }
+}

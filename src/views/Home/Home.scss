@@ -1,0 +1,40 @@
+.home{
+    padding-top: 15px;
+    background-color: #f1f1f1;
+    &__recommend{
+
+        &__title{
+            h1{
+                margin-top: 0;
+            }
+            
+        }
+        &__carrousel{
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            &__item{
+                
+                width: 100px;
+                height: 190px;
+                background-image: url('./../../../public/images/backgroundParty.jpg');
+                background-position: center;
+                background-size: cover;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                border-radius: 10px;
+                
+
+                h2{
+                    
+                    color: white;
+                    font-size: 3.5rem;
+                    margin: 7px;
+                    
+                }
+            }
+        }
+    }
+
+}
