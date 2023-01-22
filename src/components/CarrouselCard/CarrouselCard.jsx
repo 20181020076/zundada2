@@ -1,14 +1,28 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const CarrouselCard = ({name,urlImage, position}) => {
+const CarrouselCard = ({ name, urlImage, position }) => {
+  
   return (
-    <div className="home__recommend__carrousel__item">
-      
-      <h2>{position}</h2>
-      {/* <Link className="home__recommend__carrousel__item__link"><img src={`./images/${urlImage}`} alt="" /></Link> */}
-    </div>
+    <Link style={{ textDecoration: "none", color: "white" }}>
+      <Card urlImage={urlImage}>
+        <h2>{position}</h2>
+      </Card>
+    </Link>
   );
 };
+
+const Card = styled.div`
+  width: 100px;
+  height: 190px;
+  background-image: url("/images/${(props) => props.urlImage}");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border-radius: 10px;
+`;
 
 export default CarrouselCard;

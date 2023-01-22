@@ -1,0 +1,59 @@
+.container{
+    text-decoration: none;
+    color: black;
+    
+    .eventCard{
+        min-width: 0;
+        background-color: white;
+        border-radius: 10px;
+        width:33vw;
+        
+        
+        &__image{
+            height: 120px;
+            width:100%;
+            justify-content: flex-end;
+            align-items: flex-end;
+            border-radius: 10px;
+            
+            p{
+                display: flex;
+                padding: 3px;
+                background-color: white;
+                border-radius: 25px;
+                font-size: 10px;
+                color: black;
+                height: 10px;
+                align-items: center;
+                margin: 10px 2px;
+                
+            }
+        }
+        &__description{
+        
+            &__name{
+                font-size: 0.8rem;
+            }
+            &__info{
+                display: flex;
+                font-size: 0.7rem;
+                justify-content: space-between;
+                &__discount{
+                    display: flex;
+                    &__porcentage{
+                        color: purple;
+                    }
+                    &__total{
+                        text-decoration: line-through;
+                        text-decoration-color: red;
+                    }
+                    
+                }
+                &__total{
+                    color: purple;
+                }
+    
+            }
+        }
+    }
+}
