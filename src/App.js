@@ -6,7 +6,7 @@ import Profile from "./views/Profile/Profile";
 import Cart from "./views/Cart/Cart";
 import Favorites from "./views/Favorites/Favorites";
 import Tickets from "./views/Tickets/Tickets";
-import EventDetails from "./views/EventDetails/EventDetails";
+import EventDetailsContainer from "./views/EventDetailsContainer/EventDetailsContainer";
 import CartProvider from "./context/CartProvider";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -21,7 +21,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/events" element={<Home />} />
-          <Route path="/events/:id" element={<EventDetails />} />
+          <Route path="/events/:id" element={<EventDetailsContainer />} />
         </Routes>
         <Footer />
       </BrowserRouter>

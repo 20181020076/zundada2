@@ -97,6 +97,7 @@ const Home = () => {
       </div>
       <div className="home__nearly">
         <h1>Cerca de Ti</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolorum suscipit aliquam quo deserunt, fuga natus eum non dolorem consectetur neque ducimus, voluptates sit, perspiciatis minus aspernatur ipsa quia corporis.</p>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const cartContext = createContext([]);
 
 const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([{name:1},{name:2}]);
+  const [cart, setCart] = useState([]);
   const isInCart = (id) => {
     return cart.some((product) => product.id === id);
   };
