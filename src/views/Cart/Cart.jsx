@@ -4,7 +4,6 @@ import { cartContext } from '../../context/CartProvider';
 const Cart = () => {
   const { cart } = useContext(cartContext);
   const [total, setTotal] = useState(0);
-  console.log(cart.length);
   // useEffect(()=>{
 
   // })
@@ -12,7 +11,11 @@ const Cart = () => {
     <div>
       <h1>carrito: {cart.length}</h1>
       {cart.map((product) =>{
-        return (<div key={product.name}>{product.name}</div>)
+        return (
+        <div key={product.name}>
+          <div>{product.name}</div>
+          <div>{product.quantity}</div>
+        </div>)
       })}
     </div>
   )

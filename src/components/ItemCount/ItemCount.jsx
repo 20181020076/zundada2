@@ -13,8 +13,8 @@ const ItemCount = ({ setCount }) => {
   };
   return (
     <div>
-      <button onClick={addItem}>Agregar</button>
       <button onClick={removeItem}>Quitar</button>
+      <button onClick={addItem}>Agregar</button>
     </div>
   );
 };

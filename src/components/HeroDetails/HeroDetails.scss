@@ -1,0 +1,14 @@
+.hero{
+    border: 1px solid red;
+    
+    width:100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    &__container{
+        width: 90%;
+        height: 150px;
+        border-radius: 20px;
+        margin: 20px 0;
+    }
+}

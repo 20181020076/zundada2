@@ -13,7 +13,7 @@ const CardGeneric = ({ name, image }) => {
   );
 };
 const Card = styled.div`
-  background-image: url("./images/${(props) => props.image}");
+  background-image: url("/images/${(props) => props.image}");
   background-position: center;
   background-size: cover;
 `;
