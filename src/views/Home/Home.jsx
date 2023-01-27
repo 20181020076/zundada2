@@ -55,7 +55,7 @@ const Home = () => {
     {
       id:3,
       name:"Regreso a clases",
-      image:"evento2.png",
+      image:"evento3.jpg",
       topic:"vallenato",
       date:"10 dic 23",
       discount:20,
@@ -64,7 +64,7 @@ const Home = () => {
     {
       id:4,
       name:"hola",
-      image:"evento2.png",
+      image:"evento4.jpg",
       topic:"vallenato",
       date:"10 dic 23",
       discount:20,
@@ -97,7 +97,7 @@ const Home = () => {
       </div>
       <div className="home__nearly">
         <h1>Cerca de Ti</h1>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d5623.739194060705!2d-74.05477900487648!3d4.667991384449518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1szona%20t!5e0!3m2!1ses-419!2sco!4v1674782029867!5m2!1ses-419!2sco" width="100%" height="300"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>      </div>
+        </div>
     </div>
   );
 };

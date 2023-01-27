@@ -1,0 +1,33 @@
+.cover{
+   font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    
+    &__info{
+        display: flex;
+        
+        &__image{
+            width: 20%;
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    &__prices{
+        display: flex;
+    
+        &__discounts{
+            color: purple;
+        }
+        &__total{
+            &__noDiscount{
+                text-decoration-line: line-through;
+                text-decoration-color: red;
+            }
+        }
+    }
+
+}
