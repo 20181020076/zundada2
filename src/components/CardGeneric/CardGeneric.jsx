@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "./CardGeneric.scss";
 
-const CardGeneric = ({ name, image }) => {
+const CardGeneric = ({ name, image,id, type }) => {
   return (
-    <Link style={{ textDecoration: "none", color: "white" }}>
+    <Link to={`/${type==='zone'?'zones':'genders'}/${id}`} style={{ textDecoration: "none", color: "white" }}>
       <Card className={"cardGeneric"} image={image}>
         <h3>{name}</h3>
       </Card>

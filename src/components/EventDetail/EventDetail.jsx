@@ -21,8 +21,8 @@ const EventDetail = ({ productSelected }) => {
         <div className="eventDetails__date__hour">21:30 - 3:00</div>
       </div>
       <div className="eventDetails__cover">
-        <CoverCard product={productSelected} />
-        <CoverCard product={productSelected} />
+        <CoverCard product={productSelected} newStyles={'cover'}/>
+        <CoverCard product={productSelected} newStyles={'cover'}/>
       </div>
       <div className="eventDetails__button">
         <button onClick={() => addToCart(productSelected, count)}>

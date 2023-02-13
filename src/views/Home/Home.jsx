@@ -1,76 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.scss";
 import CarrouselCard from "../../components/CarrouselCard/CarrouselCard";
 import CarrouselEvents from "../../components/CarrouselEvents/CarrouselEvents";
 import CarrouselGeneric from "../../components/CarrouselGeneric/CarrouselGeneric";
 
 const Home = () => {
-  const zones = [
-    {
-      name: "Zona T",
-      image: "backgroundDj.jpg",
-    },
-    {
-      name: "modelia",
-      image: "backgroundParty5.jpg",
-    },
-    {
-      name: "terra bomba",
-      image: "backgroundParty2.jpg",
-    },
-  ];
-  const geners = [
-    {
-      name: "Reggaton",
-      image: "backgroundParty3.jpg",
-    },
-    {
-      name: "Electronica",
-      image: "backgroundParty.jpg",
-    },
-    {
-      name: "Bachata",
-      image: "backgroundParty5.jpg",
-    },
-  ];
-  const events = [
-    {
-      id:1,
-      name:"Fin de año",
-      image:"evento.jpg",
-      topic:"reggeton",
-      date:"9 dic 23",
-      discount:25,
-      cover:30000
-    },
-    {
-      id:2,
-      name:"Diomedazo",
-      image:"evento2.png",
-      topic:"vallenato",
-      date:"10 dic 23",
-      discount:20,
-      cover:50000
-    },
-    {
-      id:3,
-      name:"Regreso a clases",
-      image:"evento3.jpg",
-      topic:"vallenato",
-      date:"10 dic 23",
-      discount:20,
-      cover:50000
-    },
-    {
-      id:4,
-      name:"hola",
-      image:"evento4.jpg",
-      topic:"vallenato",
-      date:"10 dic 23",
-      discount:20,
-      cover:50000
-    }
-  ];
+  const [zones,setZones] = useState([]);
+  const [geners,setGeners] = useState([]);
+  const [events,setEvents] = useState([]);
+  useEffect(()=>{
+    fetch('http://localhost:9000')
+    .then(response => response.json())
+    .then(data=>{
+      setEvents(data.events.map(item=>{
+        return{
+          id: item.ID_EVENT,
+          name: item.NAME_EVENT,
+          image: item.CARD_IMAGE,
+          topic: item.TOPIC_EVENT,
+          date: item.DATE_EVENT,
+          discount: item.DISCOUNT_EVENT,
+          cover: item.COVER_EVENT,
+          consumible:item.CONSUMIBLE_EVENT
+
+        }
+      }))
+      setZones(data.zones.map(item=>{
+        return{
+          name:item.NAME_ZONE,
+          image:item.IMAGE_ZONE,
+          id: item.ID_ZONE,
+          type: 'zone'
+        }
+      }))
+      setGeners(data.genders.map(item=>{
+        return{
+          name:item.NAME_GENDER,
+          image:item.IMAGE_GENDER,
+          id: item.ID_GENDER,
+          type: 'gender'
+        }
+      }))
+    })
+  },[])
+  
   return (
     <div className="home">
       <div className="home__recommend">

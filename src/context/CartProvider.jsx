@@ -14,11 +14,12 @@ const CartProvider = ({ children }) => {
       setCart([...cart, { ...product, quantity }]);
     }
   };
+
   const clear = () => {
     setCart([]);
   };
   return (
-    <cartContext.Provider value={{ cart, addToCart }}>
+    <cartContext.Provider value={{ cart, addToCart,clear }}>
       {children}
     </cartContext.Provider>
   );

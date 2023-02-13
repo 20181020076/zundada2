@@ -1,9 +1,12 @@
-import React from "react";
+import React,{ useState } from "react";
 import "./CoverCard.scss";
-const CoverCard = ({ product }) => {
+import styled from "styled-components";
+
+const CoverCard = ({ product,newStyles}) => {
+  
   const valueWithDiscount = (product.cover * (100 - product.discount)) / 100;
   return (
-    <div className="cover">
+    <Cover className={newStyles}>
       <div className="cover__info">
         <div className="cover__info__image">
           <img src="/images/cover.png" alt="" />
@@ -18,23 +21,28 @@ const CoverCard = ({ product }) => {
       <div className="cover__prices">
         <div className="cover__prices__discounts">
           <div className="cover__prices__discounts__porcentage">
-            <h3>25%off</h3>
+            <h3>{product.discount}%off</h3>
           </div>
           <div className="cover__prices__discounts__gift">
-            <p>+ $10.000 consumibles</p>
+            <p>+ ${product.consumible} </p>
+            <p>consumibles</p>
           </div>
         </div>
         <div className="cover__prices__total">
           <div className="cover__prices__total__noDiscount">
-            <h4>$100.000</h4>
+            <h4>${product.cover}</h4>
           </div>
           <div className="cover__prices__total__total">
-            <h2>$75.000</h2>
+            <h2>${valueWithDiscount}</h2>
           </div>
         </div>
       </div>
-    </div>
+    </Cover>
   );
 };
 
 export default CoverCard;
+
+const Cover = styled.div`
+
+`;

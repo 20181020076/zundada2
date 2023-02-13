@@ -5,7 +5,6 @@ import "./CarrouselEvents.scss";
 const CarrouselEvents = ({ events }) => {
   return (
     <div className="carrouselEvents">
-      
         {events.map((event) => {
           return (
             <EventCard

@@ -1,60 +1,33 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import EventDetail from "../../components/EventDetail/EventDetail";
 const EventDetailsContainer = () => {
   const [productSelected, setProductSelected] = useState();
-  
-  const { id } = useParams();
-  const events = [
-    {
-      id:1,
-      name:"Fin de año",
-      image:"evento.jpg",
-      topic:"reggeton",
-      date:"9 dic 23",
-      discount:25,
-      cover:30000
-    },
-    {
-      id:2,
-      name:"Diomedazo",
-      image:"evento2.png",
-      topic:"vallenato",
-      date:"10 dic 23",
-      discount:20,
-      cover:50000
-    },
-    {
-      id:3,
-      name:"Regreso a clases",
-      image:"evento2.png",
-      topic:"vallenato",
-      date:"10 dic 23",
-      discount:20,
-      cover:50000
-    },
-    {
-      id:4,
-      name:"hola",
-      image:"evento2.png",
-      topic:"vallenato",
-      date:"10 dic 23",
-      discount:20,
-      cover:50000
-    }
-  ];
-  const getProduct = () => {
-    const found = events.find( event =>event.id == id);
-    if(found){
-      setProductSelected(found);
-    }
-    
-    
-  };
+
+  const { eid } = useParams();
+
   useEffect(() => {
-    getProduct();
-  }, [id]);
-  return <div>{productSelected && <EventDetail productSelected={productSelected}/>}</div>;
+    fetch(`http://localhost:9000/events/${eid}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProductSelected({
+          id: data[0].ID_EVENT,
+          name: data[0].NAME_EVENT,
+          image: data[0].CARD_IMAGE,
+          topic: data[0].TOPIC_EVENT,
+          date: data[0].DATE_EVENT,
+          discount: data[0].DISCOUNT_EVENT,
+          cover: data[0].COVER_EVENT,
+          consumible: data[0].CONSUMIBLE_EVENT,
+        });
+      });
+  }, []);
+
+  return (
+    <div>
+      {productSelected && <EventDetail productSelected={productSelected} />}
+    </div>
+  );
 };
 
 export default EventDetailsContainer;

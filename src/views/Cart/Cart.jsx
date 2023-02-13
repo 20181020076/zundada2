@@ -1,24 +1,27 @@
-import React, { useContext,useState,useEffect} from 'react';
-import { cartContext } from '../../context/CartProvider';
-
+import React, { useContext } from "react";
+import { cartContext } from "../../context/CartProvider";
+import CartItem from "../../components/CartItem/CartItem";
+import BarraTotal from "../../components/BarraTotal/BarraTotal";
+import "./Cart.scss";
 const Cart = () => {
   const { cart } = useContext(cartContext);
-  const [total, setTotal] = useState(0);
+
   // useEffect(()=>{
 
   // })
   return (
-    <div>
+    <div className="cart">
+      <div className="cart__total">
+        <BarraTotal />
+      </div>
+      <div className="cart__list">
+        {cart.map((product) => {
+          return <CartItem key={product.name} product={product} />;
+        })}
+      </div>
       <h1>carrito: {cart.length}</h1>
-      {cart.map((product) =>{
-        return (
-        <div key={product.name}>
-          <div>{product.name}</div>
-          <div>{product.quantity}</div>
-        </div>)
-      })}
     </div>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;
