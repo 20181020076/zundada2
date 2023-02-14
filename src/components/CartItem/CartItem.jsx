@@ -2,22 +2,22 @@ import React from "react";
 import { cartContext } from "../../context/CartProvider";
 import CoverCard from "../CoverCard/CoverCard";
 import "./CartItem.scss";
-const CartItem = ({ product }) => {
+const CartItem = ({ idProduct }) => {
   return (
     <div className="cartItem">
       <div className="cartItem__image">
-        <img src={`/images/${product.image}`} alt="" />
+        <img src={`/images/`} alt="" />
       </div>
       <div className="cartItem__description">
         <div>
           <div>
-            <h2>{product.name}</h2>
+            <h2>{}</h2>
           </div>
           <div>
-            <CoverCard product={product} />
+            <CoverCard product={idProduct} />
           </div>
         </div>
-        <div>{product.quantity}</div>
+        <div>{idProduct}</div>
       </div>
     </div>
   );

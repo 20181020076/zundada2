@@ -11,13 +11,17 @@ import CartProvider from "./context/CartProvider";
 import Zones from "./views/Zones/Zones";
 import ZoneDetailsContainer from "./views/ZoneDetailsContainer/ZoneDetails";
 import GenderDetailsContainer from "./views/GenderDetailsContainer/GenderDetailsContainer";
+import Login from "./views/Login/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <CartProvider>
       <BrowserRouter>
+           
         <Navbar />
         <Routes>
+          
+          <Route path="/login" element={<Login/>}/>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/tickets" element={<Tickets />} />          
@@ -29,6 +33,7 @@ function App() {
           <Route path="/zones/:zid" element={<ZoneDetailsContainer/>}/>
           <Route path="/zones/:zid/:eid" element={<Home/>}/>
           <Route path="/genders/:gid" element={<GenderDetailsContainer/>}/>
+          
         </Routes>
         <Footer />
       </BrowserRouter>

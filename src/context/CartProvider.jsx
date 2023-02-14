@@ -7,11 +7,11 @@ const CartProvider = ({ children }) => {
   const isInCart = (id) => {
     return cart.some((product) => product.id === id);
   };
-  const addToCart = (product, quantity) => {
-    if (isInCart(product.id)) {
+  const addToCart = (idProduct, quantity) => {
+    if (isInCart(idProduct)) {
       alert("El producto ya se encuentra en el carrito");
-    } else {
-      setCart([...cart, { ...product, quantity }]);
+    } else{
+      setCart([...cart, { ...idProduct, quantity }]);
     }
   };
 
