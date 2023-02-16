@@ -5,8 +5,7 @@
 /.pnp
 .pnp.js
 
-/public/images/background.mp4
-/public/images/login.mp4
+/public/images
 
 # testing
 /coverage
