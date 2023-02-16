@@ -13,6 +13,7 @@ import ZoneDetailsContainer from "./views/ZoneDetailsContainer/ZoneDetails";
 import GenderDetailsContainer from "./views/GenderDetailsContainer/GenderDetailsContainer";
 import Login from "./views/Login/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Register from "./views/Register/Register";
 function App() {
   return (
     <CartProvider>
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           
           <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/tickets" element={<Tickets />} />          

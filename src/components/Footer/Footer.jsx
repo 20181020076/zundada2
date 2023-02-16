@@ -5,7 +5,7 @@ const Footer = () => {
   const location = useLocation();
   return (
     <>
-      {location.pathname !== '/login' &&(
+      {(location.pathname !== '/login' && location.pathname !=='/register') &&(
         <div className='footer'>
         <div className='footer__menu'>
           <div className='footer__menu__col'>

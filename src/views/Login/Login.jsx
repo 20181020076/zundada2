@@ -13,7 +13,7 @@ const Login = () => {
           <div className="loginContainer__text__form__title">
             <h2>BIENVENIDO</h2>
             <p>
-              ¿No tienes cuenta? <Link>Registrate</Link>
+              ¿No tienes cuenta? <Link to={'/register'}>Registrate</Link>
             </p>
           </div>
 

@@ -5,7 +5,7 @@ const Navbar = () => {
   const location = useLocation();
   return (
     <>
-      {location.pathname !== '/login' && (
+      {(location.pathname !== '/login' && location.pathname !=='/register') && (
         <div className='navbar'>
         <div className='navbar__links'>
         <Link to={'/profile'}><img src="/images/profile-white.png" alt=""/></Link>
