@@ -5,10 +5,9 @@
 /.pnp
 .pnp.js
 
-public/images/*
-public/images/*
-!public/images/.gitignore
 
+!public/images/.gitignore
+/public/images/*
 # testing
 /coverage
 
